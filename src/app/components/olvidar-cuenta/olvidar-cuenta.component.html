@@ -1,0 +1,27 @@
+<ion-content>
+  <br><br>
+  <div class="center">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <br><br>
+        <h3>Cambiar contraseña</h3>
+        <br><br>
+        <p class="text-center">Introduzca su email para requerir un cambio de contraseña.</p>
+        <br><br>
+        <div class="formGroup">
+          <input type="email" class="formControl" placeholder="Email" #passwordResetEmail required style="color: black;">
+        </div>
+        <br><br>
+        <!-- Calling ForgotPassword from AuthService Api -->
+        <div class="formGroup">
+          <input type="submit" class="btn btnPrimary" value="Resetear contraseña" (click)="authService.ForgotPassword(passwordResetEmail.value)" style="color: black;">
+        </div>
+      </div>
+      <br><br>
+      <div class="redirectToLogin">
+        <span class="redirect" routerLink="/login">Volver a inicio de sesión</span>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</ion-content>

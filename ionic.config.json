@@ -1,0 +1,7 @@
+{
+  "name": "PopExplore",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,16 @@
+<label style="color:white;">
+  <div>País elegido: {{selectedCountry}}</div>
+  <br>
+  <input type="text" required #numHabit placeholder="Describa que habitaciones tiene" style="color:black;">
+  <br>
+  <input type="text" required #price placeholder="Cuanto cuesta por noche (indique moneda)"style="color:black;">
+  <br>
+  <input type="text" required #location placeholder="Indique la localización"style="color:black;">
+  <br>
+</label>
+<label>
+  <input type="file" class="text-nowrap text-truncate"
+         (change)="selectFile($event)" style="color:white;"/>
+</label>
+<button class="btn"
+        [disabled]="!selectedFiles" (click)="upload('/continentes/'+ selectedContinent +'/listaPaises/' + selectedCountry + '/listaCasas', numHabit.value, price.value, location.value)">Upload</button>

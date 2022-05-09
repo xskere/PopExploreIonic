@@ -1,0 +1,15 @@
+/* Ionic Variables and Theming. */
+/* This is just a placeholder file For more info, please see: */
+/* https://ionicframework.com/docs/theming/basics */
+
+/* To quickly generate your own theme, check out the color generator */
+/* https://ionicframework.com/docs/theming/color-generator */
+ion-content {
+  --background: url('https://i.pinimg.com/originals/b8/4f/41/b84f4195a6d33c93d01111287c0c7b7e.jpg') no-repeat center/cover fixed;
+}
+
+ion-list {
+
+  background: transparent !important;
+
+}
