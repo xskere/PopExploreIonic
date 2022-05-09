@@ -34,6 +34,7 @@ import { UpOceaniaComponent } from './components/upload-to-firebase/up-oceania/u
 import { UpAfricaComponent } from './components/upload-to-firebase/up-africa/up-africa.component';
 import {FormsModule} from "@angular/forms";
 import { IonicModule } from '@ionic/angular';
+import { VerReservasComponent } from './components/ver-reservas/ver-reservas.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { IonicModule } from '@ionic/angular';
     UpAsiaComponent,
     UpAmericaComponent,
     UpOceaniaComponent,
-    UpAfricaComponent
+    UpAfricaComponent,
+    VerReservasComponent
   ],
     imports: [
         AngularFireModule.initializeApp(environment.firebaseConfig),

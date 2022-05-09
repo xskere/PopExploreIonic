@@ -4,8 +4,11 @@
       <img src="{{user.photoUrl}}" class="phoper" >
     </div>
     <div *ngIf="userLogged.email === user.email">
-      <h1 class="atras"><a href="#" class="atra">Atrás</a></h1>
+      <h1 class="atras"><a href="home" class="atra">Atrás</a></h1>
     </div>
+     <div *ngIf="userLogged.email === user.email">
+       <h1 class="atras"><a href="reservas" class="atra">Ver reservas</a></h1>
+     </div>
     <div *ngIf="userLogged.email === user.email">
       <h1 class="name">{{user.name}}</h1>
       <h1 class="rolname">{{user.userType}}</h1>

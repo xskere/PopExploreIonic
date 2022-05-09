@@ -1,7 +1,8 @@
 import {Component, NgIterable, OnInit} from '@angular/core';
 import {FileUploadHouses} from "../../models/houses/file-upload-houses.model";
-import {FileUploadService} from "../../services/casas/file-upload.service";
 import {map} from "rxjs";
+import {UploadReservasService} from "../../services/reservas/upload-reservas.service";
+import {FileUploadReservas} from "../../models/reservas/file-upload-reservas";
 
 @Component({
   selector: 'app-reserva-casa',
@@ -9,8 +10,9 @@ import {map} from "rxjs";
   styleUrls: ['./reserva-casa.component.css']
 })
 export class ReservaCasaComponent implements OnInit {
+  userLogged: any;
   selectedFiles?: FileList;
-  currentFileUploadHouses?: FileUploadHouses;
+  currentFileUploadReservas?: FileUploadReservas;
   percentage = 0;
   houses?: NgIterable<any>;
   selectedCountry: any;
@@ -18,7 +20,7 @@ export class ReservaCasaComponent implements OnInit {
   selectedHouse: any;
   photo: any;
 
-  constructor(private uploadService: FileUploadService) { }
+  constructor(private uploadService: UploadReservasService) { }
 
   ngOnInit(): void {
     this.selectedContinent = window.sessionStorage.getItem("selectedContinent");
@@ -33,5 +35,11 @@ export class ReservaCasaComponent implements OnInit {
     ).subscribe(fileUploads => {
       this.houses = fileUploads;
     });
+    this.userLogged = JSON.parse(localStorage.getItem('user')!);
+  }
+
+  onClick(name: string, url: string){
+    this.currentFileUploadReservas = new FileUploadReservas(name, url, this.userLogged.email);
+    this.uploadService.saveFileData("/reservas/", this.currentFileUploadReservas);
   }
 }

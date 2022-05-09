@@ -19,6 +19,7 @@ import {UpEuropeComponent} from "./components/upload-to-firebase/up-europe/up-eu
 import {UpAsiaComponent} from "./components/upload-to-firebase/up-asia/up-asia.component";
 import {UpAmericaComponent} from "./components/upload-to-firebase/up-america/up-america.component";
 import {UpOceaniaComponent} from "./components/upload-to-firebase/up-oceania/up-oceania.component";
+import {VerReservasComponent} from "./components/ver-reservas/ver-reservas.component";
 const routes: Routes = [
   {
     path: 'home',
@@ -31,6 +32,11 @@ const routes: Routes = [
   {
     path: 'perfilUsuario',
     component: PagPerfilComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'reservas',
+    component: VerReservasComponent,
     canActivate: [AuthGuard]
   },
   {
