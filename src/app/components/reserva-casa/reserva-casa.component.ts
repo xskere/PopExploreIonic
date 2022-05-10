@@ -38,8 +38,8 @@ export class ReservaCasaComponent implements OnInit {
     this.userLogged = JSON.parse(localStorage.getItem('user')!);
   }
 
-  onClick(name: string, url: string){
-    this.currentFileUploadReservas = new FileUploadReservas(name, url, this.userLogged.email);
+  onClick(name: string, url: string, key: string, urlPhoto: string){
+    this.currentFileUploadReservas = new FileUploadReservas(name, url, this.userLogged.email, key, urlPhoto, this.selectedContinent, this.selectedCountry);
     this.uploadService.saveFileData("/reservas/", this.currentFileUploadReservas);
   }
 }

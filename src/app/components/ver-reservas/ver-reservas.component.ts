@@ -26,4 +26,12 @@ export class VerReservasComponent implements OnInit {
     this.userLogged = JSON.parse(localStorage.getItem('user')!);
   }
 
+  onClick(name: string, url: string, key: string, urlPhoto: string, continent: string, pais: string){
+    window.sessionStorage.setItem("selectedCountry", pais);
+    window.sessionStorage.setItem("selectedHouse", key);
+    window.sessionStorage.setItem("photo", urlPhoto);
+    window.sessionStorage.setItem("selectedContinent", continent);
+
+  }
+
 }

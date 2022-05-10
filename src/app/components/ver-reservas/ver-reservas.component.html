@@ -1,7 +1,7 @@
 <ion-content >
   <h1 style="text-align: center; color:white; padding-bottom: 30px; padding-top: 10px;">Estas son sus reservas</h1>
   <section id="col1" *ngFor="let reserva of reservas; let i = index">
-    <img style="width: 300px; height: 250px;" src="{{reserva.url}}" *ngIf="reserva.email === userLogged.email">
+    <img style="width: 300px; height: 250px;" src="{{reserva.url}}" *ngIf="reserva.email === userLogged.email" (click)="onClick(reserva.name, reserva.url, reserva.key, reserva.urlPais, reserva.continente, reserva.pais)" routerLink="/reservado">
     <p *ngIf="reserva.email === userLogged.email" style="color: white;">{{reserva.name}}</p>
   </section>
 
