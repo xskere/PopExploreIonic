@@ -9,6 +9,7 @@ import {FileUploadHouses} from "../../models/houses/file-upload-houses.model";
   providedIn: 'root'
 })
 export class UserUploadService {
+  private key: any;
   private basePath = '/users';
   private db: AngularFireDatabase;
   private storage: AngularFireStorage;
@@ -45,7 +46,7 @@ export class UserUploadService {
       .catch(error => console.log(error));
   }
 
-  private deleteFileDatabase(key: string): Promise<void> {
+  public deleteFileDatabase(key: string): Promise<void> {
     return this.db.list(this.basePath).remove(key);
   }
 
@@ -54,7 +55,12 @@ export class UserUploadService {
     storageRef.child(name).delete();
   }
 
-  private saveFileData(fileUploadUsers: FileUploadUsers): void {
+  public saveFileData(fileUploadUsers: FileUploadUsers): void {
+    if(window.sessionStorage.getItem("key") !== undefined){
+      this.key = window.sessionStorage.getItem("key");
+      this.deleteFileDatabase(this.key);
+      window.sessionStorage.removeItem(this.key);
+    }
     this.db.list(this.basePath).push(fileUploadUsers);
   }
 }

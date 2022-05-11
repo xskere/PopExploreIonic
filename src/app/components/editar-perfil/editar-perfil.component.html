@@ -1,0 +1,94 @@
+<ion-content>
+  <br><br>
+  <div class="center">
+    <div class="displayTableCell">
+      <div class="authBlock">
+        <br><br>
+        <h3>Editar perfil</h3>
+        <br><br>
+        <div class="formGroup">
+          <input
+            type="text"
+            class="formControl"
+            placeholder="{{name}}"
+            #userName
+
+            style="color:black;"
+          />
+        </div>
+        <br><br>
+        <div class="formGroup">
+          <input
+            type="text"
+            class="formControl"
+            placeholder="{{country1}}"
+            #userFirstCountry
+
+            style="color:black;"
+          />
+        </div>
+        <br><br>
+        <div class="formGroup">
+          <input
+            type="text"
+            class="formControl"
+            placeholder="{{country2}}"
+            #userSecondCountry
+            style="color:black;"
+          />
+        </div>
+        <br><br>
+        <div class="formGroup">
+          <input
+            type="text"
+            class="formControl"
+            placeholder="{{country3}}"
+            #userThirdCountry
+            style="color:black;"
+          />
+        </div>
+        <br><br>
+        <div class="formGroup">
+          <input
+            type="text"
+            class="formControl"
+            placeholder="{{number}}"
+            #userNumber
+            style="color:black;"
+          />
+        </div>
+        <br><br>
+        <div class="formGroup">
+          <input
+            type="text"
+            class="formControl"
+            placeholder="{{description}}"
+            #userDescription
+            style="color:black;"
+          />
+        </div>
+        <br><br>
+        <input type="file" class="text-nowrap text-truncate"
+               (change)="selectFile($event)"
+               style="color:white;"/>
+        <br><br>
+        ¿Subirás casas?
+        <input type="text" #userType
+               placeholder="Por defecto, no"
+               style="color:black;">
+        <br><br>
+        <div class="formGroup">
+          <input
+            type="button"
+            class="btn btnPrimary"
+            value="Editar perfil"
+            (click)="upload(userName.value, userDescription.value, userNumber.value, userFirstCountry.value, userSecondCountry.value, userThirdCountry.value, userType.value)"
+            style="color: black;"/>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</ion-content>
+

@@ -40,4 +40,17 @@ export class PagPerfilComponent {
     this.userLogged = JSON.parse(localStorage.getItem('user')!);
   }
 
+  onClick(email: string, name: string, description: string, number: string, country1: string, country2: string, country3: string, userType: string, key: string, photoUrl: string){
+    window.sessionStorage.setItem("email", email);
+    window.sessionStorage.setItem("name", name);
+    window.sessionStorage.setItem("description", description);
+    window.sessionStorage.setItem("number", number);
+    window.sessionStorage.setItem("country1", country1);
+    window.sessionStorage.setItem("country2", country2);
+    window.sessionStorage.setItem("country3", country3);
+    window.sessionStorage.setItem("userType", userType);
+    window.sessionStorage.setItem("key", key);
+    window.sessionStorage.setItem("photoUrl", photoUrl);
+  }
+
 }

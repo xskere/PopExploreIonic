@@ -24,7 +24,8 @@ export class RegistrarCuentaComponent{
       const file: File | null = this.selectedFiles.item(0);
       this.selectedFiles = undefined;
       if (file) {
-        this.currentFileUploadUsers = new FileUploadUsers(email, name, description, number, country1, country2, country3, file, userType);
+        this.currentFileUploadUsers = new FileUploadUsers(email, name, description, number, country1, country2, country3, userType);
+        this.currentFileUploadUsers.file = file;
         this.userUploadService.pushFileToStorage(this.currentFileUploadUsers);
       }
     }

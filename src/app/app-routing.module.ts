@@ -20,6 +20,7 @@ import {UpAsiaComponent} from "./components/upload-to-firebase/up-asia/up-asia.c
 import {UpAmericaComponent} from "./components/upload-to-firebase/up-america/up-america.component";
 import {UpOceaniaComponent} from "./components/upload-to-firebase/up-oceania/up-oceania.component";
 import {VerReservasComponent} from "./components/ver-reservas/ver-reservas.component";
+import {EditarPerfilComponent} from "./components/editar-perfil/editar-perfil.component";
 const routes: Routes = [
   {
     path: 'home',
@@ -101,6 +102,10 @@ const routes: Routes = [
   {
     path: 'verify',
     component: VerificarCuentaComponent
+  },
+  {
+    path: 'editarPerfil',
+    component: EditarPerfilComponent
   },
   {
     path: '',

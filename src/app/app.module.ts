@@ -35,6 +35,7 @@ import { UpAfricaComponent } from './components/upload-to-firebase/up-africa/up-
 import {FormsModule} from "@angular/forms";
 import { IonicModule } from '@ionic/angular';
 import { VerReservasComponent } from './components/ver-reservas/ver-reservas.component';
+import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { VerReservasComponent } from './components/ver-reservas/ver-reservas.com
     UpAmericaComponent,
     UpOceaniaComponent,
     UpAfricaComponent,
-    VerReservasComponent
+    VerReservasComponent,
+    EditarPerfilComponent
   ],
     imports: [
         AngularFireModule.initializeApp(environment.firebaseConfig),

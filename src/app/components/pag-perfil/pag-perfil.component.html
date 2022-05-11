@@ -7,7 +7,10 @@
       <h1 class="atras"><a href="home" class="atra">Atrás</a></h1>
     </div>
      <div *ngIf="userLogged.email === user.email">
-       <h1 class="atras"><a href="reservas" class="atra">Ver reservas</a></h1>
+       <h1 class="atras"><a href="reservas" class="atra" >Ver reservas</a></h1>
+     </div>
+     <div *ngIf="userLogged.email === user.email">
+       <h1 class="atras"><a href="editarPerfil" class="atra" (click)="onClick(user.email, user.name, user.description, user.number, user.country1, user.country2, user.country3, user.userType, user.key, user.photoUrl)">Editar perfil</a></h1>
      </div>
     <div *ngIf="userLogged.email === user.email">
       <h1 class="name">{{user.name}}</h1>
