@@ -28,7 +28,13 @@ export class RegistrarCuentaComponent{
         this.currentFileUploadUsers.file = file;
         this.userUploadService.pushFileToStorage(this.currentFileUploadUsers);
       }
+    }else{
+      this.currentFileUploadUsers = new FileUploadUsers(email, name, description, number, country1, country2, country3, userType);
+      this.currentFileUploadUsers.photoUrl = "https://firebasestorage.googleapis.com/v0/b/popexploreionic.appspot.com/o/images%2FMono.png?alt=media&token=81ffbc00-80b1-468f-9ffd-6d5b3f7d66cc";
+      this.userUploadService.saveFileData(this.currentFileUploadUsers);
     }
+
+
   }
 
 

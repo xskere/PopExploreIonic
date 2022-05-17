@@ -49,7 +49,7 @@ export class PagPerfilComponent {
     window.sessionStorage.setItem("country2", country2);
     window.sessionStorage.setItem("country3", country3);
     window.sessionStorage.setItem("userType", userType);
-    window.sessionStorage.setItem("key", key);
+    window.sessionStorage.setItem("userToDelete", key);
     window.sessionStorage.setItem("photoUrl", photoUrl);
   }
 

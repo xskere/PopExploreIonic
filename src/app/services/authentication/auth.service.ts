@@ -107,6 +107,16 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
+      window.sessionStorage.removeItem("userToDelete");
+      window.sessionStorage.removeItem("email");
+      window.sessionStorage.removeItem("number");
+      window.sessionStorage.removeItem("name");
+      window.sessionStorage.removeItem("country1");
+      window.sessionStorage.removeItem("country2");
+      window.sessionStorage.removeItem("country3");
+      window.sessionStorage.removeItem("userType");
+      window.sessionStorage.removeItem("description");
+      window.sessionStorage.removeItem("photoUrl");
       window.location.reload();
       this.router.navigate(['login']);
     });

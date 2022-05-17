@@ -24,6 +24,11 @@ export class HeaderComponent implements OnInit {
     });
 
     this.userLogged = JSON.parse(localStorage.getItem('user')!);
+    console.log(this.userLogged.email);
+  }
+
+  log(string: string){
+    console.log(string);
   }
 
 }

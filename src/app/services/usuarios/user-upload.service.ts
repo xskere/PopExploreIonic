@@ -56,10 +56,11 @@ export class UserUploadService {
   }
 
   public saveFileData(fileUploadUsers: FileUploadUsers): void {
-    if(window.sessionStorage.getItem("key") !== undefined){
-      this.key = window.sessionStorage.getItem("key");
+    if(window.sessionStorage.getItem("userToDelete") !== null){
+      console.log(window.sessionStorage.getItem("userToDelete"));
+      this.key = window.sessionStorage.getItem("userToDelete");
       this.deleteFileDatabase(this.key);
-      window.sessionStorage.removeItem(this.key);
+      window.sessionStorage.removeItem("userToDelete");
     }
     this.db.list(this.basePath).push(fileUploadUsers);
   }
